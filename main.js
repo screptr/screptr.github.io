@@ -31,4 +31,4 @@ function colorImage(r, g, b) {
     ctx.putImageData(imageData, 0, 0);
 }
 
-colorImage(1, 0, 0); // Set to red (100,50,0)
+colorImage(100,50,0); // Set to red (100,50,0)
