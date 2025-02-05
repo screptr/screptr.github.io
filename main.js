@@ -31,4 +31,40 @@ function colorImage(r, g, b) {
     ctx.putImageData(imageData, 0, 0);
 }
 
-colorImage(0,255,0); // Set to red (100,50,0)
+var im1 = false
+var im2 = false
+var im3 = false
+
+var i1 = 1
+var i2 = 2
+var i3 = 3
+rainbow = setTimeout(function(){
+    if (i1 > 254)
+        im1 = true
+    if (i1 < 1)
+        im1 = false
+    if (i2 > 254)
+        im2 = true
+    if (i2 < 1)
+        im2 = false
+    if (i3 > 254)
+        im3 = true
+    if (i3 < 1)
+        im3 = false
+
+    if (im1 == true)
+        i1 -= 1
+    if (im1 == false)
+        i1 += 1
+    if (im2 == true)
+        i2 -= 1
+    if (im2 == false)
+        i2 += 1
+    if (im3 == true)
+        i3 -= 1
+    if (im3 == false)
+        i3 += 1
+    
+    
+    colorImage(i1,i2,i3)
+},10)
