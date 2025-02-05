@@ -67,4 +67,5 @@ rainbow = setTimeout(function(){
     
     
     colorImage(i1,i2,i3)
+    console.log(i1,i2,i3)
 },10)
