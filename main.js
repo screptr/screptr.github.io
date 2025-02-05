@@ -13,16 +13,27 @@ ctx.drawImage(img, 0, 0);
 let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 let data = imageData.data;
 
-let red = Math.round(0 * 255);
-let green = Math.round(1 * 255);
-let blue = Math.round(0 * 255);
+// Apply rainbow effect by cycling through RGB
+let rainbowColors = [
+    [255, 0, 0],    // Red
+    [255, 127, 0],  // Orange
+    [255, 255, 0],  // Yellow
+    [0, 255, 0],    // Green
+    [0, 0, 255],    // Blue
+    [75, 0, 130],   // Indigo
+    [238, 130, 238] // Violet
+];
 
-// Apply custom RGB color to entire image
+// Cycle through rainbow colors for each pixel
 for (let i = 0; i < data.length; i += 4) {
-    data[i] = red;   // Red
-    data[i + 1] = green; // Green
-    data[i + 2] = blue;  // Blue
+    let colorIndex = Math.floor((i / 4) % rainbowColors.length); // Cycle through the rainbow
+    let [r, g, b] = rainbowColors[colorIndex];
+
+    data[i] = r;     // Red
+    data[i + 1] = g; // Green
+    data[i + 2] = b; // Blue
     // Alpha (data[i + 3]) remains unchanged
 }
-// Put modified data back to canvas
+
+// Put modified data back onto the canvas
 ctx.putImageData(imageData, 0, 0);
