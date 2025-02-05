@@ -1,3 +1,7 @@
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function colorImage(r, g, b) {
     const img = document.getElementById("rgbLogo");
     const canvas = document.getElementById("rgbCanvas");
@@ -35,9 +39,9 @@ var im1 = false
 var im2 = false
 var im3 = false
 
-var i1 = 1
-var i2 = 2
-var i3 = 3
+var i1 = getRandomNumber(5,200)
+var i2 = getRandomNumber(5,200)
+var i3 = getRandomNumber(5,200)
 rainbow = setInterval(function(){
     if (i1 > 254)
         im1 = true
@@ -67,5 +71,4 @@ rainbow = setInterval(function(){
     
     
     colorImage(i1,i2,i3)
-    console.log(i1,i2,i3)
 },10)
