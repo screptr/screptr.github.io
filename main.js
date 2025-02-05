@@ -38,7 +38,7 @@ var im3 = false
 var i1 = 1
 var i2 = 2
 var i3 = 3
-rainbow = setTimeout(function(){
+rainbow = setInterval(function(){
     if (i1 > 254)
         im1 = true
     if (i1 < 1)
