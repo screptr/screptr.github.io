@@ -1,10 +1,6 @@
-const img = document.getElementById("rgbLogo");
-const canvas = document.getElementById("rgbCanvas");
-const ctx = canvas.getContext("2d");
-
 function colorImage(r, g, b) {
-    const img = document.getElementById("myImage");
-    const canvas = document.getElementById("myCanvas");
+    const img = document.getElementById("rgbLogo");
+    const canvas = document.getElementById("rgbCanvas");
     const ctx = canvas.getContext("2d");
 
     // Set canvas size to match the image
