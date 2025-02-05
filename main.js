@@ -1,22 +1,27 @@
-const image = document.getElementsByTagName('screptyLogo');
-const canvas = document.createElement('canvas');
-const ctx = canvas.getContext('2d');
+function colorImage() {
+    const img = document.getElementById("rgbLogo");
+    const canvas = document.getElementById("rgbCanvas");
+    const ctx = canvas.getContext("2d");
 
-canvas.width = image.width;
-canvas.height = image.height;
-ctx.drawImage(image, 0, 0);
+    // Set canvas size to match the image
+    canvas.width = img.width;
+    canvas.height = img.height;
 
-// Get the pixel data
-const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-const pixels = imageData.data;
+    // Draw the image on the canvas
+    ctx.drawImage(img, 0, 0);
 
-// Manipulate the pixel data
-for (let i = 0; i < pixels.length; i += 4) {
-  // Adjust red, green, and blue values
-  pixels[i] = pixels[i] + 50; // Red
-  pixels[i + 1] = pixels[i + 1] - 50; // Green
-  pixels[i + 2] = pixels[i + 2] * 0.5; // Blue
+    // Get image data
+    let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let data = imageData.data;
+
+    // Apply color (1,0,0) as an RGB filter (red channel max, green & blue off)
+    for (let i = 0; i < data.length; i += 4) {
+        data[i] = 255;  // Red (1 * 255)
+        data[i + 1] = 0; // Green (0 * 255)
+        data[i + 2] = 0; // Blue (0 * 255)
+        // Alpha (data[i + 3]) remains unchanged
+    }
+
+    // Put modified data back to canvas
+    ctx.putImageData(imageData, 0, 0);
 }
-
-// Update the canvas
-ctx.putImageData(imageData, 0, 0);
