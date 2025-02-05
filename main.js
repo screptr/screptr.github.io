@@ -35,40 +35,46 @@ function colorImage(r, g, b) {
     ctx.putImageData(imageData, 0, 0);
 }
 
-var im1 = false
-var im2 = false
-var im3 = false
+let red = 255;   // Start with full red
+    let green = 0;   // Start with no green
+    let blue = 0;    // Start with no blue
 
-var i1 = getRandomNumber(5,200)
-var i2 = getRandomNumber(5,200)
-var i3 = getRandomNumber(5,200)
-rainbow = setInterval(function(){
-    if (i1 > 254)
-        im1 = true
-    if (i1 < 1)
-        im1 = false
-    if (i2 > 254)
-        im2 = true
-    if (i2 < 1)
-        im2 = false
-    if (i3 > 254)
-        im3 = true
-    if (i3 < 1)
-        im3 = false
+    let phase = 0; // Control which part of the rainbow we are in
 
-    if (im1 == true)
-        i1 -= 1
-    if (im1 == false)
-        i1 += 1
-    if (im2 == true)
-        i2 -= 1
-    if (im2 == false)
-        i2 += 1
-    if (im3 == true)
-        i3 -= 1
-    if (im3 == false)
-        i3 += 1
-    
-    
-    colorImage(i1,i2,i3)
-},10)
+    // Set the speed of transition
+    const speed = 1; // Increase for faster transition
+
+    setInterval(function() {
+        switch(phase) {
+            case 0: // Red -> Yellow
+                red -= speed;
+                green += speed;
+                if (red <= 0) phase = 1;
+                break;
+            case 1: // Yellow -> Green
+                green += speed;
+                if (green >= 255) phase = 2;
+                break;
+            case 2: // Green -> Cyan
+                green -= speed;
+                blue += speed;
+                if (green <= 0) phase = 3;
+                break;
+            case 3: // Cyan -> Blue
+                blue += speed;
+                if (blue >= 255) phase = 4;
+                break;
+            case 4: // Blue -> Violet
+                blue -= speed;
+                red += speed;
+                if (blue <= 0) phase = 5;
+                break;
+            case 5: // Violet -> Red
+                red += speed;
+                if (red >= 255) phase = 0;
+                break;
+        }
+        
+        // Update the image with the new color values
+        colorImage(red, green, blue);
+    }, 10);
