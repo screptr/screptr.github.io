@@ -1,7 +1,7 @@
 const img = document.getElementById("rgbLogo");
 const canvas = document.getElementById("rgbCanvas");
 const ctx = canvas.getContext("2d");
-
+//
 // Set canvas size to match the image
 canvas.width = img.width;
 canvas.height = img.height;
