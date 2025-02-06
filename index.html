@@ -4,15 +4,14 @@
 
 <canvas id="rgbCanvas"></canvas>
 
-<img id="rgbLogo" src="logo.png" style="display: none;">
+<img id="rgbLogo" src="logo.png">
 
 <script src="main.js?v=1"></script>
 <h1>HIE</h1>
 
 <style>
-    img {
-        width: 100vw;  /* 100% of the viewport width */
-        height: 100vh; /* 100% of the viewport height */
-        object-fit: cover; /* Ensures the image covers the entire area without stretching */
-    }
+   img {
+        width: 100vw;  /* Scales to 100% of viewport width */
+        height: auto;  /* Keeps aspect ratio */
+   }
 </style>
