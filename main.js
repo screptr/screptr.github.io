@@ -1,15 +1,16 @@
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-function colorImage(r, g, b) {
-    const img = document.getElementById("rgbLogo");
-    const canvas = document.getElementById("rgbCanvas");
-    const ctx = canvas.getContext("2d");
+const img = document.getElementById("rgbLogo");
+const canvas = document.getElementById("rgbCanvas");
+const ctx = canvas.getContext("2d");
 
     // Set canvas size to match the image
-    canvas.width = img.width;
-    canvas.height = img.height;
+canvas.width = img.width;
+canvas.height = img.height;
+
+function colorImage(r, g, b) {
+   
 
     // Draw the image on the canvas
     ctx.drawImage(img, 0, 0);
