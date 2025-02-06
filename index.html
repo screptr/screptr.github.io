@@ -7,4 +7,14 @@
 <img id="rgbLogo" src="logo.png">
 
 <script src="main.js?v=1"></script>
-<h1>HIE</h1>
+
+<script>
+    function resizeImage() {
+        const img = document.getElementById("rgbLogo");
+        img.style.width = window.innerWidth + "px"; // Set width to match tab size
+        img.style.height = window.innerHeight + "px"; // Set height to match tab size
+    }
+
+    window.addEventListener("resize", resizeImage);
+    resizeImage(); // Call function initially
+</script>
