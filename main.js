@@ -6,12 +6,12 @@ const canvas = document.getElementById("rgbCanvas");
 const ctx = canvas.getContext("2d");
 
     // Set canvas size to match the image
-canvas.width = img.width;
-canvas.height = img.height;
+
 
 function colorImage(r, g, b) {
    
-
+    canvas.width = img.width;
+    canvas.height = img.height;
     // Draw the image on the canvas
     ctx.drawImage(img, 0, 0);
 
