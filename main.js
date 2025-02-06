@@ -12,6 +12,8 @@ function colorImage(r, g, b) {
    
     canvas.width = img.width;
     canvas.height = img.height;
+    canvas.top = img.top;
+    canvas.left = img.left;
     // Draw the image on the canvas
     ctx.drawImage(img, 0, 0);
 
