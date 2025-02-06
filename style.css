@@ -1,0 +1,14 @@
+html,body{
+height : 100%;
+}
+div{
+height : 100%;
+}
+h1{
+margin : 0 auto;
+font-size : 7.5vw;
+}
+p{
+margin : 0 auto;
+font-size : 2vw;
+}
