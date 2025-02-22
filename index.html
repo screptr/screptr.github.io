@@ -31,21 +31,42 @@
             position: absolute;
             opacity: 100; /* Makes the button itself invisible */
         }
-       #civilImg {
+       #button.civilImg {
             position: absolute;
             top: 2%;
             left: 2%;
-            width: 97%;
-            height: 97%;
+            width: 95%;
+            height: 95%;
         }
-      #button.civilImg:hover {
+      #button:hover {
            position: absolute;
             top: 0%;
             left: 0%;
             width: 100%;
             height: 100%;
       }
-    
+      #piButton {
+            position: absolute;
+            top: 32%;
+            left: 35%;
+            width: 30%;
+            height: 25%;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            
+            position: absolute;
+            opacity: 100; /* Makes the button itself invisible */
+        }
+       #button.piImg {
+            position: absolute;
+            top: 2%;
+            left: 2%;
+            width: 95%;
+            height: 95%;
+        }
+      
     </style>
   </head>
 
@@ -58,7 +79,7 @@
 </button>
 
 <button id="piButton">
-    <img src="civbbg.png" id="piImage">
+    <img src="civbbg.png" id="button" class=piImg>
 </button>
 
 <script src="main.js?v=2"></script>
